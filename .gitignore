@@ -1,0 +1,10 @@
+.phpunit.cache
+build
+/vendor/
+composer.lock
+php_codesniffer.json
+phpcs.xml
+phpmd.xml
+phpunit.xml
+psalm.json
+
