@@ -5,21 +5,24 @@ declare(strict_types=1);
 namespace TJVB\LaravelGitHash;
 
 use Illuminate\Log\Logger;
+use Illuminate\Support\Facades\Log;
 use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 
 class LogEnricher implements Contracts\LogContextEnricher
 {
 
-    public function __construct(private Logger $logger, private GitHashLoader $hashLoader)
+    public function __construct(private GitHashLoader $hashLoader)
     {
     }
 
     public function enrich(): void
     {
-        $this->logger->withContext([
+        $gitHash = $this->hashLoader->getGitHash();
+        // if we use the DI for the instance we don't get the default one that is used by Laravel so we use the facade
+        Log::withContext([
             'githash' => [
-                'hash' => $this->hashLoader->getGitHash()->hash(),
-                'short' => $this->hashLoader->getGitHash()->short(),
+                'hash' => $gitHash->hash(),
+                'short' => $gitHash->short(),
             ],
         ]);
     }
