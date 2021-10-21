@@ -9,7 +9,7 @@ use TJVB\GitHash\Contracts\FinderFactory;
 use TJVB\GitHash\Contracts\GitHashRetriever;
 use TJVB\GitHash\Values\GitHash;
 
-class HashLoader implements Contracts\GitHashLoader
+final class HashLoader implements Contracts\GitHashLoader
 {
 
     public function __construct(

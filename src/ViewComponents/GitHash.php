@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 use TJVB\GitHash\Exceptions\GitHashException;
 use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 
-class GitHash extends Component
+final class GitHash extends Component
 {
 
     public function __construct(

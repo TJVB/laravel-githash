@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace TJVB\LaravelGitHash;
 
-use Illuminate\Log\Logger;
 use Illuminate\Support\Facades\Log;
 use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 
-class LogEnricher implements Contracts\LogContextEnricher
+final class LogEnricher implements Contracts\LogContextEnricher
 {
 
     public function __construct(private GitHashLoader $hashLoader)
