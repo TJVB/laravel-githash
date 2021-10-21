@@ -15,6 +15,12 @@ return [
 
     'cache_file' => storage_path('githash.cache'),
 
+    'log_context_enabled' => env('GITHASH_LOG_CONTEXT_ENABLED', true),
+
+    /***
+     * Bindings
+     */
+
     // This need to implement the \TJVB\GitHash\Contracts\FinderFactory interface
     'finderFactory' => \TJVB\GitHash\Factories\GitHashFinderFactory::class,
 
@@ -23,4 +29,7 @@ return [
 
     // This need to implement th \TJVB\LaravelGitHash\Contracts\GitHashLoader interface
     'hashloader' => \TJVB\LaravelGitHash\HashLoader::class,
+
+    // This need to implement th \TJVB\LaravelGitHash\Contracts\LogContextEnricher interface
+    'logEnricher' => \TJVB\LaravelGitHash\LogEnricher::class,
 ];

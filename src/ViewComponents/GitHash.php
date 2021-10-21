@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TJVB\LaravelGithash\ViewComponents;
+namespace TJVB\LaravelGitHash\ViewComponents;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

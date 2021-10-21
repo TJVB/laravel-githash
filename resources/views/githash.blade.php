@@ -1,3 +1,3 @@
-<div {{ $attributes }}>
+<div {{ $attributes ?? ''}}>
     {{$short}} ( {{$githash}} )
 </div>

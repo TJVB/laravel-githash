@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace TJVB\LaravelGitHash;
 
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use TJVB\GitHash\Contracts\FinderFactory;
 use TJVB\GitHash\Contracts\GitHashRetriever;
 use TJVB\LaravelGitHash\Contracts\GitHashLoader;
-use TJVB\LaravelGithash\ViewComponents\GitHash;
+use TJVB\LaravelGitHash\Contracts\LogContextEnricher;
+use TJVB\LaravelGitHash\ViewComponents\GitHash;
 
 class GitHashServiceProvider extends ServiceProvider
 {
@@ -23,9 +25,10 @@ class GitHashServiceProvider extends ServiceProvider
         $this->app->bind(FinderFactory::class, config('githash.finderFactory'));
         $this->app->bind(GitHashLoader::class, config('githash.hashloader'));
         $this->app->bind(GitHashRetriever::class, config('githash.retriever'));
+        $this->app->bind(LogContextEnricher::class, config('githash.logEnricher'));
     }
 
-    public function boot()
+    public function boot(Repository $config, LogContextEnricher $contextEnricher)
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'githash');
         $this->publishes([
@@ -36,5 +39,9 @@ class GitHashServiceProvider extends ServiceProvider
         ]);
 
         Blade::component('githash', GitHash::class);
+
+        if ($config->get('githash.log_context_enabled', true)) {
+            $contextEnricher->enrich();
+        }
     }
 }
