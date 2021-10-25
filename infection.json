@@ -1,0 +1,17 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": [
+            "src"
+        ],
+        "excludes": [
+            "GitHashServiceProvider.php"
+        ]
+    },
+    "logs": {
+        "text": "build/infection.log"
+    },
+    "mutators": {
+        "@default": true
+    }
+}
