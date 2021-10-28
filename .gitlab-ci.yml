@@ -90,6 +90,19 @@ test_php80:
   needs:
     - prepare_cache
 
+infection:
+  stage: test
+  script:
+    - vendor/bin/infection
+  dependencies:
+    - prepare_cache
+  needs:
+    - prepare_cache
+  artifacts:
+    paths:
+      - build/infection.log
+    when: always
+
 CodeQuality:
   stage: report
   dependencies:

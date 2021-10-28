@@ -23,6 +23,7 @@
     },
     "require-dev": {
         "beechit/json-to-code-climate-subset-converter": "^1.6",
+        "infection/infection": "^0.25.3",
         "orchestra/testbench": "^6.21",
         "phpmd/phpmd": "^2.10",
         "phpstan/phpstan": "^0.12.99",
