@@ -17,7 +17,8 @@ final class GitHash extends Component
     public function __construct(
         private Factory $viewFactory,
         private GitHashLoader $hashLoader,
-        private LoggerInterface $logger
+        private LoggerInterface $logger,
+        private ?string $version = ''
     ) {
     }
 
@@ -36,6 +37,7 @@ final class GitHash extends Component
         return $this->viewFactory->make('githash::githash')
             ->with('githash', $hash)
             ->with('short', $short)
+            ->with('version', $this->version)
             ;
     }
 }

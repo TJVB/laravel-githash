@@ -18,7 +18,7 @@ The package provides a way to add the githash to add the hash and the short hash
 
 
 ## Blade component
-This package adds a default blade component that you can use with `<x-githash></x-githash>` to show the short and githash on your (admin) pages.  
+This package adds a default blade component that you can use with `<x-githash></x-githash>` to show the short and githash on your (admin) pages. This has the option add a version statement short or long to only show on eof the versions. `<x-githash version="short"></x-githash>`  
 
 
 ## Other usages
