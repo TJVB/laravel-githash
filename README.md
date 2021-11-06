@@ -45,7 +45,7 @@ In the default configuration there are different ENV variables that can be used.
 | GITHASH_LOG_CONTEXT_ENABLED | true | If the hash needs to be added to the log context. |
 
 ### Finders
-This package use `[tjvb/githash](https://gitlab.com/tjvb/githash)` to provide the hash. This has different finders available. You can fill a specific finder to use. If you leave it empty it will add the default finders. (With the default factory it means all the finders from that project.)
+This package use [`tjvb/githash`](https://gitlab.com/tjvb/githash) to provide the hash. This has different finders available. You can fill a specific finder to use. If you leave it empty it will add the default finders. (With the default factory it means all the finders from that project.)
 
 ### Different blade component view
 After publishing the blade file `php artisan vendor:publish` you can change the blade. The location after publishing will be `resources/views/vendor/githash/githash.blade.php` here you can edit the blade how you want it.
