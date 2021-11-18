@@ -33,7 +33,8 @@ public function example(GitHashLoader $gitHashLoader)
 ```
 
 ## Customization and configuration
-After publishing the config file with `php artisan vendor:publish` you can change the bindings for the different classes.
+After publishing the config file with `php artisan vendor:publish` you can change the bindings for the different classes.  
+**It is important to have the cache file pointed to a place that isn't shared between your deployments.**
 
 ### env file variables
 In the default configuration there are different ENV variables that can be used.
@@ -50,10 +51,30 @@ This package use [`tjvb/githash`](https://gitlab.com/tjvb/githash) to provide th
 ### Different blade component view
 After publishing the blade file `php artisan vendor:publish` you can change the blade. The location after publishing will be `resources/views/vendor/githash/githash.blade.php` here you can edit the blade how you want it.
 
+### Custom implementations
+It is possible to overwrite the different classes, this can be done by implementing the interfaces and update the config file. The config file contains the implementations and has a comment to point to the correct interface to implement.
+
 
 ## Cache
 This package uses a file to cache the hash. The cache with a file is used because this should be faster than getting the cache every time it is wanted. (Also depending on the finder and the repository size). It doesn't use the building Laravel cache to prevent the usage of a shared cache. With this file cache it is possible to see that by example one queue runner use another code version than the other runners. This can be helpful in debugging any problems.
 
+## Usage without git on your server
+Depending on the way you deploy your application it is possible that you don't have the repository information available. For this it will also be usefull to write the hash to the cache file.
+
+### Envoyer example
+If you use [Envoyer](https://envoyer.io/) you don't have the git repository on your server. And the full storage dir will be shared between your deployments. That needs some customization.  
+First update your configuration to have a cache file outside the shared directory.  
+```php
+// in config/githash.php
+    'cache_file' => base_path('githash.cache'),
+```
+Then add a new deployment hook that will be executed before you install your composer dependencies to place the hash in the cache file:
+```shell
+cd {{release}}
+
+echo {{sha}} > githash.cache
+```
+With this changes you will have the cachefile without the need to have the repository on the server and can use the hash on the wanted locations.
 
 ## Changelog
 We (try to) document all the changes in [CHANGELOG](CHANGELOG.md) so read it for more information.
