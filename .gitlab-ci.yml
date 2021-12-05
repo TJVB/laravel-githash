@@ -19,6 +19,7 @@ prepare_cache:
     name: "vendor"
     paths:
       - vendor/*
+      - composer.phar
 
 lint:
   stage: check
@@ -65,7 +66,6 @@ test_lowest:
   script:
     # Install composer
     - rm -f composer.lock
-    - curl -sS https://getcomposer.org/installer | php
     - php composer.phar update --prefer-lowest
     - vendor/bin/phpunit --coverage-text --colors=never --log-junit=phpunitresult/junit.xml
   artifacts:
@@ -79,6 +79,22 @@ test_lowest:
 test_php80:
   stage: test
   script:
+    - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
+    - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
+  artifacts:
+    reports:
+      junit: phpunitresult/junit.xml
+      cobertura: phpunitresult/cobertura-coverage.xml
+  dependencies:
+    - prepare_cache
+  needs:
+    - prepare_cache
+
+
+test_php81:
+  stage: test
+  script:
+    - php composer.phar install
     - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
     - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
   artifacts:
