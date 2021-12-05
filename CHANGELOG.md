@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-
 ### Added
-- Use tjvb/githash package to get the git hash.
-- Blade component to show the hash.
-- LogEnricher to add the hash to the log context.
-- Add the cache option to cache the result in a file.
+- Add PHP 8.1 support
+
+## 1.0.0 - 2021-10-30
+- Initial release
