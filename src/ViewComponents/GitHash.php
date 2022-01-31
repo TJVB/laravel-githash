@@ -13,7 +13,6 @@ use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 
 final class GitHash extends Component
 {
-
     public function __construct(
         private Factory $viewFactory,
         private GitHashLoader $hashLoader,

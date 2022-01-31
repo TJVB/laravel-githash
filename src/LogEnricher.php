@@ -9,7 +9,6 @@ use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 
 final class LogEnricher implements Contracts\LogContextEnricher
 {
-
     public function __construct(private GitHashLoader $hashLoader)
     {
     }

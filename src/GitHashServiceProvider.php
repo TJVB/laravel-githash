@@ -15,7 +15,6 @@ use TJVB\LaravelGitHash\ViewComponents\GitHash;
 
 class GitHashServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
         $this->mergeConfigFrom(
