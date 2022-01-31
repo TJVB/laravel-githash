@@ -1,14 +1,14 @@
 {
     "name": "tjvb/laravel-githash",
-    "type": "library",
     "description": "Get the current git hash from your project, show it in your blade or add it to your logs.",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "tjvb",
         "githash",
         "hash",
         "laravel"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Tobias van Beek",
@@ -16,8 +16,18 @@
             "homepage": "https://www.tjvb.nl"
         }
     ],
+    "support": {
+        "issues": "https://gitlab.com/tjvb/githash/-/issues",
+        "source": "https://gitlab.com/tjvb/githash/-/tree/master"
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://paypal.me/tvbeek"
+        }
+    ],
     "require": {
-        "php": "^8.0 | ^8.1",
+        "php": "^8.0 || ^8.1",
         "laravel/framework": "^8.0",
         "tjvb/githash": "^1.0"
     },
@@ -30,9 +40,6 @@
         "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "^3.6"
     },
-    "config": {
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
             "TJVB\\LaravelGitHash\\": "src/"
@@ -42,6 +49,12 @@
         "psr-4": {
             "TJVB\\LaravelGitHash\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "infection/extension-installer": true
+        },
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
@@ -64,15 +77,5 @@
         "phpstan": "vendor/bin/phpstan",
         "test": "vendor/bin/phpunit --no-coverage",
         "test-coverage": "vendor/bin/phpunit --coverage-html build/coverage"
-    },
-    "support": {
-        "issues": "https://gitlab.com/tjvb/githash/-/issues",
-        "source": "https://gitlab.com/tjvb/githash/-/tree/master"
-    },
-    "funding": [
-        {
-            "type": "paypal",
-            "url": "https://paypal.me/tvbeek"
-        }
-    ]
+    }
 }
