@@ -16,9 +16,11 @@
             "homepage": "https://www.tjvb.nl"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "support": {
-        "issues": "https://gitlab.com/tjvb/githash/-/issues",
-        "source": "https://gitlab.com/tjvb/githash/-/tree/master"
+        "issues": "https://gitlab.com/tjvb/laravel-githash/-/issues",
+        "source": "https://gitlab.com/tjvb/laravel-githash/-/tree/master"
     },
     "funding": [
         {
@@ -28,13 +30,12 @@
     ],
     "require": {
         "php": "^8.0 || ^8.1",
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^8.0||^9.0",
         "tjvb/githash": "^1.0"
     },
     "require-dev": {
-        "beechit/json-to-code-climate-subset-converter": "^1.6",
         "infection/infection": "^0.25.3",
-        "orchestra/testbench": "^6.21",
+        "orchestra/testbench": "^6.21 || ^7.0",
         "phpmd/phpmd": "^2.10",
         "phpstan/phpstan": "^0.12.99",
         "phpunit/phpunit": "^9.5",
