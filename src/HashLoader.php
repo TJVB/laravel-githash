@@ -11,7 +11,6 @@ use TJVB\GitHash\Values\GitHash;
 
 final class HashLoader implements Contracts\GitHashLoader
 {
-
     public function __construct(
         private Repository $config,
         private FinderFactory $finderFactory,
