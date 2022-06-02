@@ -82,7 +82,9 @@ test_php80_laravel8:
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
-      cobertura: phpunitresult/cobertura-coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: phpunitresult/cobertura-coverage.xml
   dependencies:
     - prepare_cache
   needs:
@@ -98,7 +100,9 @@ test_php80_laravel9:
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
-      cobertura: phpunitresult/cobertura-coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: phpunitresult/cobertura-coverage.xml
   dependencies:
     - prepare_cache
   needs:
@@ -114,7 +118,9 @@ test_php81_laravel8:
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
-      cobertura: phpunitresult/cobertura-coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: phpunitresult/cobertura-coverage.xml
   dependencies:
     - prepare_cache
   needs:
@@ -130,7 +136,9 @@ test_php81_laravel9:
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
-      cobertura: phpunitresult/cobertura-coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: phpunitresult/cobertura-coverage.xml
   dependencies:
     - prepare_cache
   needs:
