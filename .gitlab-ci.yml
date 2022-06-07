@@ -79,6 +79,7 @@ test_php80_laravel8:
     - composer require --dev orchestra/testbench=^6.0
     - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
     - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
+  coverage:  '/^\s*Lines:\s*\d+.\d+\%/'
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
@@ -97,6 +98,7 @@ test_php80_laravel9:
     - composer require --dev orchestra/testbench=^7.0
     - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
     - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
+  coverage:  '/^\s*Lines:\s*\d+.\d+\%/'
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
@@ -115,6 +117,7 @@ test_php81_laravel8:
     - composer require --dev orchestra/testbench=^6.0
     - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
     - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
+  coverage:  '/^\s*Lines:\s*\d+.\d+\%/'
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
@@ -133,6 +136,7 @@ test_php81_laravel9:
     - composer require --dev orchestra/testbench=^7.0
     - vendor/bin/phpunit --coverage-text --colors=never --coverage-cobertura=phpunitresult/cobertura-coverage.xml --log-junit=phpunitresult/junit.xml
     - sed -i 's~ filename="~ filename="src/~' phpunitresult/cobertura-coverage.xml
+  coverage:  '/^\s*Lines:\s*\d+.\d+\%/'
   artifacts:
     reports:
       junit: phpunitresult/junit.xml
