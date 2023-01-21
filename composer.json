@@ -29,7 +29,11 @@
         },
         {
             "type": "github",
-            "url": "https://github.com/sponsors/tvbeek/"
+            "url": "https://github.com/sponsors/tvbeek"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/TJVB"
         }
     ],
     "require": {
