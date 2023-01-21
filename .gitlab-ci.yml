@@ -60,13 +60,8 @@ phpstan:
 
 test_lowest:
   stage: test
-  parallel:
-    matrix:
-      - PHP: [ 80, 81, 82 ]
-  image: registry.gitlab.com/tjvb/phpimages:php$PHP
+  image: registry.gitlab.com/tjvb/phpimages:php80
   script:
-    - echo "Laravel $LARAVEL"
-    - echo "PHP $PHP"
     # Install composer
     - rm -f composer.lock
     - composer update --prefer-lowest
