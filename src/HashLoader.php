@@ -49,7 +49,7 @@ final class HashLoader implements Contracts\GitHashLoader
             $this->finderFactory->registerDefaultFinders();
         }
         $this->retriever->setFinderFactory($this->finderFactory);
-        return $this->retriever->getHash($this->config->get('githash.path', base_path()));
+        return $this->retriever->getHashAndIgnoreFailures($this->config->get('githash.path', base_path()));
     }
 
     private function getCacheContent($cacheFile): string|null

@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add PHP 8.2 support
 
+### Changed
+- Switch from `getHash` to `getHashAndIgnoreFailures` in the HashLoader to iterate all finders on a failure.
+
 ## 1.2.0 - 2022-02-8
 ### Added
 - Add support for Laravel 9
