@@ -15,6 +15,9 @@ return [
 
     'cache_file' => storage_path('githash.cache'),
 
+    // If we add the information to the about command
+    'about_enabled' => env('GITHASH_ABOUT_ENABLED', true),
+
     'log_context_enabled' => env('GITHASH_LOG_CONTEXT_ENABLED', true),
 
     /***

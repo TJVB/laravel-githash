@@ -20,6 +20,8 @@ The package provides a way to add the githash to add the hash and the short hash
 ## Blade component
 This package adds a default blade component that you can use with `<x-githash></x-githash>` to show the short and githash on your (admin) pages. This has the option add a version statement short or long to only show on eof the versions. `<x-githash version="short"></x-githash>`  
 
+## About command
+If the Laravel about command is available it will add information about the hash and the cache status. This can be disabled in the config.
 
 ## Other usages
 There ar a lot of options to add the hash to other parts in your application. This can be done with injecting the `\TJVB\LaravelGitHash\Contracts\GitHashLoader`, this provides the `getGitHash` function that returns a `TJVB\GitHash\Values\GitHash` value object that provides the `hash()` and `short()` function.  
@@ -39,11 +41,12 @@ After publishing the config file with `php artisan vendor:publish` you can chang
 ### env file variables
 In the default configuration there are different ENV variables that can be used.
 
-| Name | Default | Description |
-| ---- | ------- | ------- |
+| Name | Default | Description                                                                                                                                  |
+| ---- | ------- |----------------------------------------------------------------------------------------------------------------------------------------------|
 | GITHASH_REPO_PATH | base_path()| The path to the git repository, depending on the finder this need to be the root of the repository, or it can be any path in the repository. |
-| GITHASH_CACHE_ENABLED | null | If the cache needs to be enabled, if null it will be enabled if debug is disabled. |
-| GITHASH_LOG_CONTEXT_ENABLED | true | If the hash needs to be added to the log context. |
+| GITHASH_CACHE_ENABLED | null | If the cache needs to be enabled, if null it will be enabled if debug is disabled.                                                           |
+| GITHASH_ABOUT_ENABLED | true | If information about the hash and the cache status needs to be added to the Laravel About command.                                           |
+| GITHASH_LOG_CONTEXT_ENABLED | true | If the hash needs to be added to the log context.                                                                                            |
 
 ### Finders
 This package use [`tjvb/githash`](https://gitlab.com/tjvb/githash) to provide the hash. This has different finders available. You can fill a specific finder to use. If you leave it empty it will add the default finders. (With the default factory it means all the finders from that project.)
