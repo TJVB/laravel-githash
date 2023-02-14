@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Add Laravel 10 support.
 
 ## 1.3.0 - 2023-02-08
+
 ### Added
 - Add PHP 8.2 support
 - Add information to the Laravel about command.
