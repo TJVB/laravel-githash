@@ -1,14 +1,14 @@
 <div {{ $attributes ?? ''}}>
     @if($version !== 'long')
         {{$short}}
-        @if($version !== 'short')
-            (
-        @endif
+    @endif
+    @if($version !== 'short' && $version !== 'long')
+        (
     @endif
     @if($version !== 'short')
         {{$githash}}
-        @if($version !== 'long'
-            )
-        @endif
+    @endif
+    @if($version !== 'short' && $version !== 'long')
+        )
     @endif
 </div>

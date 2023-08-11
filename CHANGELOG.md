@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+- Fix missing ) after the long hash in the view if $version is not set.
+
 ## 1.4.0 - 2023-02-14
 
 ### Added
