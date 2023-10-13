@@ -1,6 +1,22 @@
 # Laravel GitHash
-[![pipeline status](https://gitlab.com/tjvb/laravel-githash/badges/master/pipeline.svg)](https://gitlab.com/tjvb/laravel-githash/commits/master)
-[![coverage report](https://gitlab.com/tjvb/laravel-githash/badges/master/coverage.svg)](https://gitlab.com/tjvb/laravel-githash/commits/master)
+
+[![Latest Stable Version](https://poser.pugx.org/tjvb/laravel-githash/v)](https://packagist.org/packages/tjvb/laravel-githash)
+[![Pipeline status](https://gitlab.com/tjvb/laravel-githash/badges/master/pipeline.svg)](https://gitlab.com/tjvb/laravel-githash/-/pipelines?page=1&scope=all&ref=master)
+[![Coverage report](https://gitlab.com/tjvb/laravel-githash/badges/master/coverage.svg)](https://gitlab.com/tjvb/laravel-githash/-/pipelines?page=1&scope=all&ref=master)
+[![Tested on PHP 8.0 to 8.2](https://img.shields.io/badge/Tested%20on-PHP%208.0%20|%208.1%20|%208.2-brightgreen.svg?maxAge=2419200)](https://gitlab.com/tjvb/laravel-githash/-/pipelines?page=1&scope=all&ref=master)
+[![Tested on Laravel 8 to 10](https://img.shields.io/badge/Tested%20on-Laravel%208%20|%209%20|%2010-brightgreen.svg?maxAge=2419200)](https://gitlab.com/tjvb/laravel-mail-catchall/-/pipelines?page=1&scope=all&ref=master)
+[![Latest Unstable Version](https://poser.pugx.org/tjvb/laravel-githash/v/unstable)](https://packagist.org/packages/tjvb/laravel-githash)
+
+
+[![PHP Version Require](https://poser.pugx.org/tjvb/laravel-githash/require/php)](https://packagist.org/packages/tjvb/laravel-githash)
+[![Laravel Version Require](https://poser.pugx.org/tjvb/laravel-githash/require/laravel/framework)](https://packagist.org/packages/tjvb/laravel-mail-catchall)
+[![PHPMD](https://img.shields.io/badge/PHPMD-checked-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpmd.xml.dist)
+[![PHPStan](https://img.shields.io/badge/PHPStan-checked-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpstan.neon.dist)
+[![PHPCS](https://img.shields.io/badge/PHPCS-PSR12-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpcs.xml.dist)
+
+
+[![License](https://poser.pugx.org/tjvb/laravel-githash/license)](https://packagist.org/packages/tjvb/laravel-githash)
+
 
 ## Purpose
 The goal for this is to give a simplified way to get the git hash from your code. This hash can be showed in the admin interface, added to your logs, and used for everything you can imaging.
