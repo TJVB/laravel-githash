@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
+### Added
+- Add PHP 8.3 support.
+
 ### Fixed
 - Fix missing ) after the long hash in the view if $version is not set.
 
