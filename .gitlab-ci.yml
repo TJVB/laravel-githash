@@ -1,5 +1,5 @@
 # set the default docker image
-image: registry.gitlab.com/tjvb/phpimages:php80
+image: registry.gitlab.com/tjvb/phpimages:php83
 
 stages:
   - prepare # prepare the cache
@@ -25,29 +25,12 @@ lint:
     - find src/ -type f -name '*.php' -exec php -l {} \; | (! grep -v "No syntax errors detected" )
   dependencies: []
 
-phpcs:
-  stage: check
-  script:
-    - vendor/bin/phpcs
-  dependencies:
-    - prepare_cache
-  needs:
-    - prepare_cache
-
-phpmd:
-  stage: check
-  script:
-    - vendor/bin/phpmd src/ text phpmd.xml.dist
-  dependencies:
-    - prepare_cache
-  needs:
-    - prepare_cache
 
 phpstan:
   stage: check
   script:
     # check for phpstan errors
-    - php -d memory_limit=500M vendor/bin/phpstan analyse --error-format=gitlab > phpstan.json
+    - php -d memory_limit=500M vendor/bin/phpstan analyse --error-format=gitlab | tee phpstan.json
     - cat phpstan.json
   dependencies:
     - prepare_cache
@@ -56,8 +39,38 @@ phpstan:
   artifacts:
     paths:
       - phpstan.json
+    reports:
+      codequality: phpstan.json
     when: always
 
+phpmd:
+  stage: check
+  script:
+    - composer phpmd
+  dependencies:
+    - prepare_cache
+  needs:
+    - prepare_cache
+
+code-style:
+  stage: check
+  script:
+    - vendor/bin/ecs
+  dependencies:
+    - prepare_cache
+  needs:
+    - prepare_cache
+
+# We check the content with vale
+vale:
+  image:
+    name: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/jdkato/vale
+    entrypoint: [""]
+  stage: check
+  script:
+    - /bin/vale --config=tools/vale/.vale.ini docs README.md
+  needs: []
+  dependencies: []
 
 infection:
   image: registry.gitlab.com/tjvb/phpimages:php83
@@ -133,16 +146,3 @@ test:
     - prepare_cache
   dependencies:
     - prepare_cache
-
-CodeQuality:
-  stage: report
-  dependencies:
-    - phpstan
-    - prepare_cache
-  script:
-    - composer require beechit/json-to-code-climate-subset-converter
-    - vendor/bin/converter convert --phpstan --phpstan-json-file=phpstan.json
-  artifacts:
-    reports:
-      codequality: code-climate.json
-    when: always

@@ -37,6 +37,6 @@ final class GitHash extends Component
             ->with('githash', $hash)
             ->with('short', $short)
             ->with('version', $this->version)
-            ;
+        ;
     }
 }

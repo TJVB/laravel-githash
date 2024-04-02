@@ -34,7 +34,7 @@ The package provides a way to add the githash to add the hash and the short hash
 
 
 ## Blade component
-This package adds a default blade component that you can use with `<x-githash></x-githash>` to show the short and githash on your (admin) pages. This has the option add a version statement short or long to only show on eof the versions. `<x-githash version="short"></x-githash>`  
+This package adds a default blade component that you can use with `<x-githash></x-githash>` to show the short and githash on your (admin) pages. This has the option add a version statement short or long to only show on of the versions. `<x-githash version="short"></x-githash>`  
 
 ## About command
 If the Laravel about command is available it will add information about the hash and the cache status. This can be disabled in the config.
@@ -78,7 +78,7 @@ It is possible to overwrite the different classes, this can be done by implement
 This package uses a file to cache the hash. The cache with a file is used because this should be faster than getting the cache every time it is wanted. (Also depending on the finder and the repository size). It doesn't use the building Laravel cache to prevent the usage of a shared cache. With this file cache it is possible to see that by example one queue runner use another code version than the other runners. This can be helpful in debugging any problems.
 
 ## Usage without git on your server
-Depending on the way you deploy your application it is possible that you don't have the repository information available. For this it will also be usefull to write the hash to the cache file.
+Depending on the way you deploy your application it is possible that you don't have the repository information available. For this it will also be useful to write the hash to the cache file.
 
 ### Envoyer example
 If you use [Envoyer](https://envoyer.io/) you don't have the git repository on your server. And the full storage dir will be shared between your deployments. That needs some customization.  
@@ -93,14 +93,14 @@ cd {{release}}
 
 echo {{sha}} > githash.cache
 ```
-With this changes you will have the cachefile without the need to have the repository on the server and can use the hash on the wanted locations.
+With these changes you will have the cache file without the need to have the repository on the server and can use the hash on the wanted locations.
 
 ## Changelog
 We (try to) document all the changes in [CHANGELOG](CHANGELOG.md) so read it for more information.
 
 
 ## Contributing
-You are very welcome to contribute, read about it in [CONTRIBUTING](CONTRIBUTING.md)
+You are welcome to contribute, read about it in [CONTRIBUTING](CONTRIBUTING.md)
 
 
 ## License

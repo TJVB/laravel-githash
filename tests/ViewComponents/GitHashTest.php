@@ -10,7 +10,7 @@ use TJVB\LaravelGitHash\Tests\Fixtures\FakeGitHashLoader;
 use TJVB\LaravelGitHash\Tests\TestCase;
 use TJVB\LaravelGitHash\ViewComponents\GitHash;
 
-class GitHashTest extends TestCase
+final class GitHashTest extends TestCase
 {
     use WithFaker;
 
@@ -86,7 +86,7 @@ class GitHashTest extends TestCase
         }
     }
 
-    public function versionsProvider(): array
+    public static function versionsProvider(): array
     {
         return [
             'null version' => [null, true, true],

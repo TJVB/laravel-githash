@@ -15,7 +15,7 @@ use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 use TJVB\LaravelGitHash\Contracts\LogContextEnricher;
 use TJVB\LaravelGitHash\ViewComponents\GitHash;
 
-class GitHashServiceProvider extends ServiceProvider
+final class GitHashServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -55,7 +55,7 @@ class GitHashServiceProvider extends ServiceProvider
         if (!$config->get('githash.about_enabled', true)) {
             return;
         }
-        AboutCommand::add('GitHash', function () use ($config, $hashLoader) {
+        AboutCommand::add('GitHash', static function () use ($config, $hashLoader) {
             try {
                 $gitHash = $hashLoader->getGitHash();
                 $cacheStatus = '<fg=yellow;options=bold>NOT CACHED</>';

@@ -10,7 +10,7 @@ use TJVB\LaravelGitHash\Contracts\GitHashLoader;
 use TJVB\LaravelGitHash\HashLoader;
 use TJVB\LaravelGitHash\Tests\Fixtures\FakeGitHashRetriever;
 
-class HashLoaderTest extends TestCase
+final class HashLoaderTest extends TestCase
 {
     use WithFaker;
 
