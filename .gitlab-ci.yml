@@ -58,6 +58,23 @@ phpstan:
       - phpstan.json
     when: always
 
+
+infection:
+  image: registry.gitlab.com/tjvb/phpimages:php83
+  stage: test
+  script:
+    - composer install
+    - vendor/bin/phpunit --migrate-configuration
+    - vendor/bin/infection
+  dependencies:
+    - prepare_cache
+  needs:
+    - prepare_cache
+  artifacts:
+    paths:
+      - build/infection.log
+    when: always
+
 test_lowest:
   stage: test
   image: registry.gitlab.com/tjvb/phpimages:php80
@@ -91,6 +108,11 @@ test:
           - 81
           - 82
           - 83
+      - LARAVEL: 11
+        TESTBENCH: 9
+        PHP:
+          - 82
+          - 83
   image: registry.gitlab.com/tjvb/phpimages:php$PHP
   stage: test
   script:
@@ -111,19 +133,6 @@ test:
     - prepare_cache
   dependencies:
     - prepare_cache
-
-infection:
-  stage: test
-  script:
-    - vendor/bin/infection
-  dependencies:
-    - prepare_cache
-  needs:
-    - prepare_cache
-  artifacts:
-    paths:
-      - build/infection.log
-    when: always
 
 CodeQuality:
   stage: report
