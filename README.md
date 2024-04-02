@@ -12,7 +12,7 @@
 [![Laravel Version Require](https://poser.pugx.org/tjvb/laravel-githash/require/laravel/framework)](https://packagist.org/packages/tjvb/laravel-mail-catchall)
 [![PHPMD](https://img.shields.io/badge/PHPMD-checked-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpmd.xml.dist)
 [![PHPStan](https://img.shields.io/badge/PHPStan-checked-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpstan.neon.dist)
-[![PHPCS](https://img.shields.io/badge/PHPCS-PSR12-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpcs.xml.dist)
+[![ECS](https://img.shields.io/badge/ECS-PSR12-brightgreen.svg)](https://gitlab.com/tjvb/laravel-githash/-/blob/master/phpcs.xml.dist)
 
 
 [![License](https://poser.pugx.org/tjvb/laravel-githash/license)](https://packagist.org/packages/tjvb/laravel-githash)
