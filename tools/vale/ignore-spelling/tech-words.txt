@@ -1,4 +1,6 @@
-env
 config
+env
+html
 laravel
 phpstan
+PHPUnit
