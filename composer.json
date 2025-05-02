@@ -36,13 +36,13 @@
     ],
     "require": {
         "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
-        "laravel/framework": "^8.0 || ^9.0 || ^10 || ^11",
+        "laravel/framework": "^8.0 || ^9.0 || ^10 || ^11 || ^12",
         "tjvb/githash": "^1.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.52",
         "infection/infection": "^0.25.3 || ^0.26.0 || ^0.27.0|| ^0.28.0 || ^0.29.0",
-        "orchestra/testbench": "^6.21 || ^7.0 || ^8.0 || ^9.0",
+        "orchestra/testbench": "^6.21 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
         "phpmd/phpmd": "^2.10",
         "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0",
